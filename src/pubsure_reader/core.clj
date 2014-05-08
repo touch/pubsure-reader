@@ -4,9 +4,7 @@
 
 (ns pubsure-reader.core
   (:require [pubsure-ws.reader :as reader]
-            [pubsure-zk.directory :as directory]
-            [containium.systems :refer (forward-protocol)]
-            [org.httpkit.server :as server]))
+            [pubsure-zk.directory :as directory]))
 
 
 (def app nil)
