@@ -5,10 +5,10 @@
 (defproject pubsure-reader "0.1.0-SNAPSHOT"
   :description "Containium app for pubsure-ws/reader using pubsure-zk."
   :url "https://github.com/containium/Backend"
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [containium "0.1.0-SNAPSHOT"]
+  :dependencies [[containium "0.1.0-SNAPSHOT"]
                  [pubsure/pubsure-ws "0.1.0-SNAPSHOT"]
                  [pubsure/pubsure-zk "0.1.0-SNAPSHOT"]]
+  :exclusions [org.clojure/clojure]
   :containium {:start pubsure-reader.core/start
               :stop pubsure-reader.core/stop
               :ring {:handler pubsure-reader.core/app
