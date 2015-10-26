@@ -9,16 +9,20 @@
 
 (def app nil)
 
-(def stop nil)
+(def reader-state nil)
+(def zk-dir nil)
 
 (defn start
   "Start the app."
   [systems config]
   (let [zk-connect-str (-> config :containium :zk-connect-str)
         zk-dir (directory/start-directory zk-connect-str)
-        [reader-state ring-app] (reader/make-app zk-dir)
-        stop-fn (fn [_]
-                  (reader/stop-app reader-state)
-                  (directory/stop-directory zk-dir))]
+        [reader-state ring-app] (reader/make-app zk-dir)]
     (alter-var-root #'app (constantly ring-app))
-    (alter-var-root #'stop (constantly stop-fn))))
+    (alter-var-root #'reader-state (constantly reader-state))
+    (alter-var-root #'zk-dir (constantly zk-dir))
+    [reader-state zk-dir]))
+
+(defn stop [[reader-state zk-dir]]
+  (reader/stop-app reader-state)
+  (directory/stop-directory zk-dir))
