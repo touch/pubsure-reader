@@ -7,7 +7,8 @@
   :url "https://github.com/containium/Backend"
   :dependencies [[containium "0.3.0-SNAPSHOT"]
                  [pubsure/pubsure-ws "0.1.0-SNAPSHOT"]
-                 [pubsure/pubsure-zk "0.1.0-SNAPSHOT"]]
+                 [pubsure/pubsure-zk "0.1.0-SNAPSHOT"]
+                 [com.taoensso/timbre "6.2.2"]]
   :exclusions [org.clojure/clojure com.taoensso/timbre]
   :containium {:start pubsure-reader.core/start
               :stop pubsure-reader.core/stop
