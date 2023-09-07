@@ -6,7 +6,7 @@
   :description "Containium app for pubsure-ws/reader using pubsure-zk."
   :url "https://github.com/containium/Backend"
   :dependencies [[containium "0.3.0-SNAPSHOT"]
-                 [org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojure "1.10.3"]
                  [pubsure/pubsure-ws "0.2.0-SNAPSHOT"]
                  [pubsure/pubsure-zk "0.2.0-SNAPSHOT"]
                  [com.taoensso/timbre "6.2.2"]
